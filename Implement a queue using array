@@ -1,0 +1,19 @@
+#include <stdio.h>
+int q[5], front = 0, rear = -1;
+
+void enqueue(int x) {
+    if(rear == 4) printf("Overflow");
+    else q[++rear] = x;
+}
+
+int dequeue() {
+    if(front > rear) return -1;
+    return q[front++];
+}
+
+int main() {
+    enqueue(5);
+    enqueue(10);
+    printf("%d", dequeue());
+    return 0;
+}
