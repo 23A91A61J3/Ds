@@ -1,0 +1,22 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+struct Node { int d; struct Node* next; };
+
+int main() {
+    struct Node *a=malloc(sizeof(struct Node));
+    struct Node *b=malloc(sizeof(struct Node));
+    struct Node *c=malloc(sizeof(struct Node));
+
+    a->d=1; a->next=b;
+    b->d=2; b->next=c;
+    c->d=3; c->next=NULL;
+
+    int count=0;
+    struct Node* t=a;
+    while(t!=NULL){
+        count++;
+        t=t->next;
+    }
+    printf("%d", count);
+}
